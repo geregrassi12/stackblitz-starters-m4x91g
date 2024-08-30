@@ -96,15 +96,36 @@ const usuarios = [
 // EJ 1: recorrer el array y mostrar por consola los siguientes atributos de cada objeto: id, name - DEBES USAR PLANTILLAS LITERALES (template strings)
 
 usuarios.forEach((usuarios) =>
-  console.table('ID: ${usuarios.id} - NAME: ${usuarios.name}')
+  console.log(`ID: ${usuarios.id} - NAME: ${usuarios.name}`)
 );
 
 //EJ 2: crear un nuevo array y mostrar por consola en una tabla aquellos usuarios cuyo website incluye '.org'
 
+const usuariosOrg = usuarios.filter(usuarios => usuarios.website.includes('.org'));
+console.table(usuariosOrg);
+
 //EJ 3: crear un nuevo array de objetos que contengan el id y el name de cada usuario.
+
+const miniUsers = usuarios.map(function (user){
+  return {
+    id: user.id,
+    name: user.name
+  }
+})
+
+console.table(miniUsers)
 
 //EJ 4: desestructurar el primer y el tercer elemento del array y mostrarlos.
 
+const [primero,, tercero,] = usuarios;
+console.log(primero, tercero);
+
 //EJ 5: desparrama el array en un nuevo array - spread operator
 
+const usuario = [...usuarios];
+console.log(usuario)
+
 //EJ 6: desparrama el primer objeto y reemplaza el nombre del usuario por 'pepe'
+
+const newObject = {...usuarios[0], name:'Pepe'}
+console.table(newObject)
