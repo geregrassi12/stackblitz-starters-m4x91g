@@ -125,7 +125,7 @@ console.log(primero, tercero);
 const usuario = [...usuarios];
 console.log(usuario)
 
-//EJ 6: desparrama el primer objeto y reemplaza el nombre del usuario por 'pepe'
+//EJ 6: desparrama el primer objeto y reemplaza el nombre del usuario por 'pepe' AA
 
 const newObject = {...usuarios[0], name:'Pepe'}
 console.table(newObject)
